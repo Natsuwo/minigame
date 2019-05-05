@@ -16,7 +16,11 @@
                     <h1 class="text-center">You</h1>
                     <img src="./img/you.png" alt="you" style="height: 500px; width: auto">
                     <div class="healthBar">
-                        <div class="healthBar text-center" style="background-color: red; margin: 0; color: white;"></div>
+                        <div class="healthBar text-center" 
+                        style="background-color: red; margin: 0; color: white;" 
+                        :style="{width: playerHealth + '%', 'maxWidth': '100%'}">
+                        {{ playerHealth }}
+                        </div>
                     </div>
                 </div>
                 <div class="small-6 columns">
@@ -24,28 +28,32 @@
                     <img src="./img/monster.png" alt="monster" style="height: 500px; width: auto">
                 
                 <div class="healthBar">
-                    <div class="healthBar text-center" style="background-color: red; margin: 0; color: white;"></div>
+                    <div class="healthBar text-center" 
+                    style="background-color: red; margin: 0; color: white;" 
+                    :style="{width: monsterHealth + '%', 'maxWidth': '100%'}">
+                    {{ monsterHealth }}
+                    </div>
                 </div>
                 </div>
             </section>
-            <section class="row controls">
+            <section class="row controls" v-if="!gameIsRunning">
                 <div class="small-12 columns">
-                    <button id="start-game">Start new game</button>
+                    <button id="start-game" @click="startNewGame">Start new game</button>
                 </div>
             </section>
-            <section class="row controls">
+            <section class="row controls" v-else>
                 <div class="small-12 columns">
-                    <button id="attack">Attack</button>
-                    <button id="special-attack">Special Attack</button>
-                    <button id="heal">Heal</button>
-                    <button id="give-up">Give up</button>
+                    <button id="attack" @click="attack">Attack</button>
+                    <button id="special-attack" @click="specialAttack">Special Attack</button>
+                    <button id="heal" @click="heal">Heal</button>
+                    <button id="give-up" @click="giveUp">Give up</button>
                 </div>
             </section>
-            <section class="row log">
+            <section class="row log" v-if="turns.length > 0">
                 <div class="small-12 columns">
                     <ul>
-                        <li>
-    
+                        <li v-for="turn in turns">
+                            {{ turn.textLog }}
                         </li>
                     </ul>
                 </div>
