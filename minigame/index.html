@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app">
+            <section class="row">
+                <div class="small-6 columns">
+                    <h1 class="text-center">You</h1>
+                    <img src="./img/you.png" alt="you" style="height: 500px; width: auto">
+                    <div class="healthBar">
+                        <div class="healthBar text-center" style="background-color: red; margin: 0; color: white;"></div>
+                    </div>
+                </div>
+                <div class="small-6 columns">
+                    <h1 class="text-center">Monster</h1>
+                    <img src="./img/monster.png" alt="monster" style="height: 500px; width: auto">
+                
+                <div class="healthBar">
+                    <div class="healthBar text-center" style="background-color: red; margin: 0; color: white;"></div>
+                </div>
+                </div>
+            </section>
+            <section class="row controls">
+                <div class="small-12 columns">
+                    <button id="start-game">Start new game</button>
+                </div>
+            </section>
+            <section class="row controls">
+                <div class="small-12 columns">
+                    <button id="attack">Attack</button>
+                    <button id="special-attack">Special Attack</button>
+                    <button id="heal">Heal</button>
+                    <button id="give-up">Give up</button>
+                </div>
+            </section>
+            <section class="row log">
+                <div class="small-12 columns">
+                    <ul>
+                        <li>
+    
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="../public/js/vue.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+</html>
